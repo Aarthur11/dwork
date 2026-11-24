@@ -1,0 +1,335 @@
+
+/* ===== Página ===== */
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 16px max(16px, calc((100% - 760px) / 2)) 100px;
+    background: #f5f8fc;
+    color: #10294b;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 15px;
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 99%;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    color: #10294b;
+}
+
+.engrenagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d8e4f3;
+    border-radius: 50%;
+    background: #fff;
+    color: #0875ff;
+    text-decoration: none;
+}
+
+.iconeEngrenagem {
+    width: 21px;
+    height: 21px;
+}
+
+/* ===== Área principal ===== */
+.main {
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.aviso {
+    margin: 30px 0;
+    color: #526783;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ===== Perfil ===== */
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.resumo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding: 8px 0 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid #d5e2f3;
+    border-radius: 50%;
+    background: transparent;
+    color: #41658d;
+    font-size: 24px;
+    font-weight: 400;
+    box-shadow: none;
+}
+
+.avatarImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nome {
+    margin: 10px 0 3px;
+    color: #10294b;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.profissao {
+    margin: 0;
+    color: #587493;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.nota {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 4px 0 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #10294b;
+    font-size: 12px;
+}
+
+.nota strong {
+    font-weight: 700;
+    color: #10294b;
+}
+
+.iconeEstrela {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #ff8a32;
+}
+
+/* ===== Conteúdo ===== */
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.conteudo section {
+    min-width: 0;
+}
+
+.secao {
+    margin: 0 0 7px;
+    padding: 0;
+    border: none;
+    color: #10294b;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.texto {
+    margin: 0;
+    color: #587493;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.vazio {
+    margin: 0;
+    color: #6b8099;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ===== Categorias ===== */
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.servico {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 39px;
+    margin: 0;
+    padding: 10px 13px;
+    border: 1px solid #d9e5f4;
+    border-radius: 11px;
+    background: #fff;
+    color: #183452;
+    font-size: 12px;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+/* ===== Avaliações ===== */
+.avaliacao {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: none;
+    border-radius: 13px;
+    background: #f0f5fb;
+}
+
+.avaliacaoTopo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.avaliacaoTopo strong {
+    color: #10294b;
+    font-size: 12px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.avaliacaoNota {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #10294b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.avaliacaoTexto {
+    margin: 7px 0 0;
+    color: #587493;
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* ===== Celulares pequenos ===== */
+@media (max-width: 380px) {
+    .container {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .nome {
+        font-size: 19px;
+    }
+}
+
+/* ===== Telas maiores ===== */
+@media (min-width: 761px) {
+    .container {
+        padding-top: 24px;
+        padding-bottom: 110px;
+    }
+
+    .header {
+        padding-bottom: 28px;
+    }
+
+    .titulo {
+        font-size: 26px;
+    }
+
+    .layout {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        align-items: start;
+        gap: 32px;
+    }
+
+    .resumo {
+        position: sticky;
+        top: 20px;
+        padding-top: 8px;
+    }
+
+    .conteudo {
+        gap: 24px;
+    }
+
+    .secao {
+        font-size: 19px;
+    }
+
+    .texto {
+        font-size: 14px;
+    }
+
+    .servico {
+        font-size: 13px;
+    }
+
+    .avaliacaoTexto {
+        font-size: 13px;
+    }
+}

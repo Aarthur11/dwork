@@ -1,0 +1,287 @@
+/* ===== Base (celular) ===== */
+.container {
+    --fundo: #f6f7fd;
+    --branco: #ffffff;
+    --azul: #0a6fd8;
+    --azul-escuro: #0a3fce;
+    --azul-claro: #e6f0ff;
+    --titulo: #1c2a4a;
+    --texto-suave: #6b7a99;
+    --borda: #e6e9f2;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* fundo na tela toda; conteúdo limitado a 1100px e centralizado.
+       90px embaixo: espaço para o menu fixo */
+    padding: 0 max(16px, calc((100% - 1100px) / 2)) 90px;
+    background: var(--fundo);
+    color: var(--titulo);
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    padding: 24px 0 16px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.subtitulo {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+/* ===== Conteúdo ===== */
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+/* ===== Dúvidas frequentes ===== */
+.duvidas {
+    padding: 14px 14px 6px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: var(--branco);
+    box-shadow: 0 1px 4px rgba(16, 24, 40, 0.05);
+}
+
+.tituloDuvidas {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item + .item {
+    border-top: 1px solid #f0f2f8;
+}
+
+.pergunta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pergunta:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+.iconeBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--azul-claro);
+}
+
+.iconeAjuda {
+    width: 20px;
+    height: 20px;
+    color: var(--azul-escuro);
+}
+
+.textoPergunta {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.seta {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: #9aa6c0;
+    transition: transform 0.25s;
+}
+
+/* a seta gira para baixo quando a pergunta está aberta */
+.setaAberta {
+    transform: rotate(90deg);
+}
+
+/* ===== Resposta (abre e fecha suavemente) ===== */
+.resposta {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s;
+}
+
+.respostaAberta {
+    grid-template-rows: 1fr;
+}
+
+.textoResposta {
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 44px;          /* alinha com o texto da pergunta */
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--texto-suave);
+}
+
+.respostaAberta .textoResposta {
+    padding-bottom: 14px;
+}
+
+/* ===== Mapa tutorial ===== */
+.mapa {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 16px;
+    border-radius: 14px;
+    background: var(--azul);
+    color: var(--branco);
+    text-decoration: none;
+    transition: filter 0.2s, transform 0.2s;
+}
+
+@media (hover: hover) {
+    .mapa:hover {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+    }
+}
+
+.mapaIcone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.iconeFone {
+    width: 22px;
+    height: 22px;
+}
+
+.mapaTextos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.mapaTitulo {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mapaSub {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.mapaSeta {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    opacity: 0.9;
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 700px) {
+    .header {
+        padding: 32px 0 20px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    .duvidas {
+        padding: 20px 22px 10px;
+    }
+
+    .tituloDuvidas {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .textoPergunta,
+    .textoResposta {
+        font-size: 15px;
+    }
+
+    .iconeBox {
+        width: 38px;
+        height: 38px;
+    }
+
+    .textoResposta {
+        padding-left: 50px;
+    }
+
+    .mapa {
+        padding: 26px 22px;
+    }
+
+    .mapaTitulo {
+        font-size: 17px;
+    }
+
+    .mapaSub {
+        font-size: 14px;
+    }
+}
+
+/* ===== Computador: perguntas à esquerda, mapa à direita ===== */
+@media (min-width: 1024px) {
+    .main {
+        grid-template-columns: 1.6fr 1fr;
+        gap: 24px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .mapa {
+        position: sticky;       /* o card acompanha a rolagem ao abrir várias respostas */
+        top: 24px;
+    }
+}

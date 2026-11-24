@@ -1,0 +1,151 @@
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 16px max(16px, calc((100% - 700px) / 2)) 90px;
+    background: #f3f6fc;
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0 16px;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #dbe9fb;
+    color: rgb(21, 90, 194);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.tituloPagina {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #12264a;
+}
+
+.aviso {
+    padding: 16px 0;
+    color: #555555;
+}
+
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border: 1px solid #d5dfef;
+    border-radius: 50%;
+    background: #eef3fb;
+    color: #3c4d6e;
+    font-size: 32px;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nome {
+    margin: 12px 0 4px;
+    font-size: 22px;
+    color: #12264a;
+}
+
+.nota {
+    margin: 0;
+    font-size: 14px;
+    color: #3c4d6e;
+}
+
+
+.secao {
+    margin: 20px 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #12264a;
+}
+
+.sobre {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3c4d6e;
+}
+
+.servicos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.servico {
+    padding: 14px;
+    border: 1px solid #d5dfef;
+    border-radius: 12px;
+    background: #ffffff;
+    font-size: 14px;
+    color: #12264a;
+}
+
+.avaliacao {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: #eef3fb;
+    font-size: 14px;
+    color: #3c4d6e;
+}
+
+.avaliacao p {
+    margin: 6px 0 0;
+}
+
+.avaliacaoTopo {
+    display: flex;
+    justify-content: space-between;
+    color: #12264a;
+}
+
+.botaoChat {
+    display: block;
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 14px;
+    background: #dbe9fb;
+    color: rgb(21, 90, 194);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}

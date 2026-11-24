@@ -1,0 +1,371 @@
+
+/* ===== Base: evita estouro de largura por causa de padding/borda ===== */
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+ 
+.container {
+    min-height: 100vh;
+    min-height: 100dvh; /* corrige a barra do navegador no celular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px; /* respiro nas bordas em telas pequenas */
+    background: #f3f4f6;
+}
+ 
+.card {
+    background-color: rgb(248, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* era width: 400px fixo */
+}
+ 
+.socialIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+}
+ 
+.logo {
+    margin: 5px auto;
+    justify-content: center;
+    display: flex;
+}
+ 
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+ 
+.email {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+.senha {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+.input {
+    width: 100%;
+    height: 33px;
+    border: 1px solid rgb(209, 208, 207);
+    border-radius: 5px;
+    background-color: rgb(248, 255, 255);
+    padding: 5px;
+}
+ 
+.esqueceu {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 13px;
+    margin: 7px 0;
+}
+ 
+.buttonEntrar {
+    background-color: rgb(247, 124, 43);
+    padding: 13px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+ 
+.buttonEntrar:hover {
+    background-color: rgb(197, 62, 0);
+}
+ 
+.buttonGoogle {
+    width: 100%;
+    height: 33px;
+    border: 1px solid rgb(209, 208, 207);
+    border-radius: 8px;
+    background-color: rgb(248, 255, 255);
+    color: #52668f;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 5px;
+    cursor: pointer;
+}
+ 
+.semConta {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 9px 0;
+    text-align: center;
+}
+ 
+.cadastro {
+    text-decoration: none;
+    margin-left: 2px;
+}
+ 
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background: #a1bcec;
+}
+ 
+.dividerText {
+    font-size: 12px;
+    color: #a1bcec;
+}
+ 
+.titulo {
+    font-size: 25px;
+}
+ 
+.subtitulo {
+    font-size: 14px;
+    color: #52668f;
+    margin-top: 3px;
+}
+ 
+.nome {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+.descricao {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+.descri {
+    width: 100%;
+    height: 59px;
+    min-height: 59px;
+    border: 1px solid rgb(209, 208, 207);
+    border-radius: 5px;
+    background-color: rgb(248, 255, 255);
+    padding: 6px;
+    font-size: 15px;
+    resize: vertical; /* evita o usuário esticar além do card */
+}
+ 
+.data {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+/* ===== Tablet e celular grande ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+}
+ 
+/* ===== Celular ===== */
+@media (max-width: 480px) {
+    .container {
+        align-items: flex-start; 
+        padding: 0;
+        background: rgb(248, 255, 255); 
+    }
+ 
+    .card {
+        max-width: none;
+        min-height: 100dvh;
+        padding: 24px 20px;
+        border-radius: 0;
+        justify-content: center;
+    }
+ 
+    .titulo {
+        font-size: 22px;
+    }
+ 
+  
+    .input,
+    .descri {
+        font-size: 16px;
+    }
+ 
+    .input {
+        height: 42px; 
+    }
+ 
+    .buttonEntrar {
+        padding: 14px;
+    }
+ 
+    .buttonGoogle {
+        height: 42px;
+    }
+}
+ 
+/* ===== Telas muito pequenas ===== */
+@media (max-width: 360px) {
+    .card {
+        padding: 20px 16px;
+    }
+ 
+    .titulo {
+        font-size: 20px;
+    }
+}
+ 
+/* ===== Celular deitado (pouca altura) ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        align-items: flex-start;
+        padding: 12px;
+    }
+ 
+    .card {
+        min-height: auto;
+    }
+}
+
+.buttonEntrar,
+.input:focus,
+.descri:focus {
+    outline: none;
+}
+
+.erroCampo{ 
+    margin: 4px 0px 0px 4px;
+    color: rgb(216, 14, 14); 
+}
+
+
+.tituloSecao {
+    margin: 28px 0 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.linha {
+    display: flex;
+    gap: 12px;
+}
+
+.linha > .nome {
+    flex: 1;
+    min-width: 0;              
+}
+
+.linha > .campoEstado {
+    flex: 0 0 88px;
+}
+
+.linha > .campoNumero {
+    flex: 0 0 110px;
+}
+
+/* o select usa a mesma classe .input; garante a mesma aparência dos campos de texto */
+select.input {
+    appearance: auto;
+    padding: 0 6px;
+}
+
+/* o foco do select também recebe o destaque */
+select.input:focus {
+    outline: none;
+}
+
+/* celular: 16px no select também evita o zoom do iPhone */
+@media (max-width: 480px) {
+    select.input {
+        font-size: 16px;
+    }
+}
+
+
+ 
+.grupo {
+    min-width: 0;
+    margin: 20px 0 0;
+    padding: 0;
+    border: none;
+    font-size: 13px;
+}
+ 
+.grupo legend {
+    padding: 0;
+    margin-bottom: 4px;
+}
+ 
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+ 
+.chipLabel {
+    position: relative;
+    cursor: pointer;
+}
+ 
+/* o checkbox fica escondido, mas continua acessível pelo teclado */
+.chipInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+}
+ 
+.chipTexto {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid rgb(209, 208, 207);
+    border-radius: 18px;
+    background-color: rgb(248, 255, 255);
+    color: #1f2937;
+    font-size: 13px;
+    user-select: none;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+ 
+/* categoria marcada: laranja, igual ao botão */
+.chipInput:checked + .chipTexto {
+    border-color: rgb(247, 124, 43);
+    background-color: rgb(247, 124, 43);
+    color: #ffffff;
+}
+ 
+/* contorno quando navega pelo teclado */
+.chipInput:focus-visible + .chipTexto {
+    outline: 2px solid #0a6fd8;
+    outline-offset: 2px;
+}
+ 
+@media (hover: hover) {
+    .chipLabel:hover .chipTexto {
+        border-color: rgb(247, 124, 43);
+    }
+}

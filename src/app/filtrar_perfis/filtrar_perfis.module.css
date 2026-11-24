@@ -1,0 +1,363 @@
+/* ===== Base (celular) ===== */
+.container {
+    --fundo: #f6f7fd;
+    --branco: #ffffff;
+    --azul: #0a6fd8;
+    --azul-claro: #e6f0ff;
+    --titulo: #1c2a4a;
+    --texto-suave: #6b7a99;
+    --borda: #e6e9f2;
+    --estrela: #f5a623;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* fundo na tela toda; conteúdo limitado a 1100px e centralizado.
+       90px embaixo: espaço para o menu fixo */
+    padding: 0 max(16px, calc((100% - 1100px) / 2)) 90px;
+    background: var(--fundo);
+    color: var(--titulo);
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+.icone {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    cursor: pointer;
+}
+
+.voltar .icone {
+    width: 24px;
+    height: 24px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--titulo);
+}
+
+/* ===== Busca ===== */
+.busca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 46px;
+    padding: 0 16px;
+    border: 1px solid var(--borda);
+    border-radius: 25px;
+    background: var(--branco);
+    color: var(--texto-suave);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.busca:focus-within {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(10, 111, 216, 0.15);
+}
+
+.buscaInput {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--titulo);
+    font-size: 14px;
+}
+
+.buscaInput::placeholder {
+    color: #9aa6c0;
+}
+
+/* ===== Filtros (chips) ===== */
+.filtros {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;       /* esconde a barra de rolagem */
+}
+
+.filtros::-webkit-scrollbar {
+    display: none;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--branco);
+    color: var(--titulo);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.chip .icone {
+    width: 16px;
+    height: 16px;
+    color: var(--azul);
+}
+
+.chipAtivo {
+    border-color: var(--azul);
+    background: var(--azul);
+    color: var(--branco);
+}
+
+.chipAtivo .icone {
+    color: var(--branco);
+}
+
+/* ===== Título da lista + ordenação ===== */
+.topoLista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 18px 0 12px;
+}
+
+.subtitulo {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.ordenar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--azul);
+}
+
+.ordenar select {
+    appearance: none;
+    padding: 4px 22px 4px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--azul);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.ordenar .icone {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;        /* o clique passa para o select */
+}
+
+.somenteLeitor {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* ===== Lista de profissionais ===== */
+.lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /* 1 coluna no celular, mais em telas grandes */
+    gap: 12px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 2px solid #eef1f8;
+    border-radius: 12px;
+    background: var(--branco);
+    box-shadow: 0 1px 4px rgba(16, 24, 40, 0.06);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.perfil:hover,
+.perfil:focus-visible {
+    border-color: var(--azul);
+    outline: none;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border: 1px solid #dfe5f2;
+    border-radius: 50%;
+    background: #f1f4fb;
+    color: #5b6b8c;
+    font-size: 18px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.nome {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--titulo);
+}
+
+.especialidade {
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+.estrela {
+    display: flex;
+    color: var(--estrela);
+}
+
+.estrela .icone {
+    width: 15px;
+    height: 15px;
+}
+
+.servicos {
+    color: var(--texto-suave);
+}
+
+.vazio {
+    margin: 24px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--texto-suave);
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 700px) {
+    .header {
+        padding: 24px 0 20px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .busca {
+        max-width: 640px;
+        height: 50px;
+    }
+
+    .chip {
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .ordenar select {
+        font-size: 14px;
+    }
+
+    .lista {
+        gap: 16px;
+    }
+}
+
+/* ===== Computador ===== */
+@media (min-width: 1024px) {
+    .titulo {
+        font-size: 28px;
+    }
+
+    .perfil {
+        padding: 18px 20px;
+    }
+
+    .avatar {
+        width: 64px;
+        height: 64px;
+        font-size: 20px;
+    }
+
+    .nome {
+        font-size: 17px;
+    }
+
+    .especialidade,
+    .meta {
+        font-size: 14px;
+    }
+}
+
+/* ===== Acréscimos para dados reais ===== */
+.avatar {
+    overflow: hidden;           /* foto do usuário cortada em círculo */
+}
+
+.avatarImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chip:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

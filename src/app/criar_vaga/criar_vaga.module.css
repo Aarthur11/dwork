@@ -1,0 +1,214 @@
+.container {
+    --fundo: #f6f7fd;
+    --branco: #ffffff;
+    --azul: #0a6fd8;
+    --azul-claro: #e6f0ff;
+    --laranja: #fb7a1b;
+    --laranja-claro: #fff0e3;
+    --titulo: #1c2a4a;
+    --texto-suave: #6b7a99;
+    --borda: #dfe5f2;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 0 max(16px, calc((100% - 700px) / 2)) 90px;
+    background: var(--fundo);
+    color: var(--titulo);
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    cursor: pointer;
+}
+
+.voltar svg {
+    width: 24px;
+    height: 24px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--branco);
+    color: var(--titulo);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--azul);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(10, 111, 216, 0.15);
+}
+
+.urgente {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    background: var(--laranja-claro);
+    color: var(--laranja);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.urgente input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--laranja);
+}
+
+.erro {
+    margin: 0;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fdecec;
+    color: #c0392b;
+    font-size: 14px;
+}
+
+.botao {
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--laranja);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (min-width: 700px) {
+    .titulo {
+        font-size: 24px;
+    }
+}
+/* ===== Fotos ===== */
+.fotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.foto,
+.adicionarFoto {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+}
+
+.foto {
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    background: var(--branco);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.removerFoto {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.adicionarFoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: 2px dashed var(--borda);
+    background: var(--branco);
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.adicionarFoto span {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.adicionarFoto:hover {
+    border-color: var(--azul);
+}

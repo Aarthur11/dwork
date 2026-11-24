@@ -1,0 +1,355 @@
+.container {
+    --fundo: #f6f7fd;
+    --branco: #ffffff;
+    --azul: #0a6fd8;
+    --azul-claro: #e6f0ff;
+    --laranja: #fb7a1b;
+    --laranja-claro: #fff0e3;
+    --titulo: #1c2a4a;
+    --texto-suave: #6b7a99;
+    --borda: #e6e9f2;
+    --estrela: #f5a623;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 0 max(16px, calc((100% - 700px) / 2)) 90px;
+    background: var(--fundo);
+    color: var(--titulo);
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    cursor: pointer;
+}
+
+.iconeVoltar {
+    width: 24px;
+    height: 24px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.aviso {
+    padding: 24px 0;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+/* ===== Cartão da vaga ===== */
+.cartao {
+    padding: 18px;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background: var(--branco);
+    box-shadow: 0 1px 4px rgba(16, 24, 40, 0.06);
+}
+
+.cartaoTopo {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.iconeVaga {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--laranja-claro);
+    color: var(--laranja);
+}
+
+.icone {
+    width: 28px;
+    height: 28px;
+}
+
+.tituloVaga {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.publicado {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 14px;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-size: 13px;
+}
+
+.tagUrgente {
+    background: var(--laranja-claro);
+    color: var(--laranja);
+}
+
+/* ===== Autor ===== */
+.autor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 14px;
+    background: #eef2fb;
+    color: inherit;
+    text-decoration: none;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border: 1px solid #dfe5f2;
+    border-radius: 50%;
+    background: #f1f4fb;
+    color: #5b6b8c;
+}
+
+.autorInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.autorNota {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.autorNota b {
+    color: var(--titulo);
+}
+
+.iconeEstrela {
+    width: 16px;
+    height: 16px;
+    color: var(--estrela);
+}
+
+/* ===== Conteúdo ===== */
+.secao {
+    margin: 22px 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.texto {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--texto-suave);
+}
+
+.detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.detalhes li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.iconeDetalhe {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--azul);
+}
+
+/* ===== Botões ===== */
+.acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.botaoCandidatar,
+.botaoChat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botaoCandidatar {
+    background: var(--laranja);
+    color: #ffffff;
+}
+
+.botaoChat {
+    background: var(--azul-claro);
+    color: var(--azul);
+}
+
+.iconeBotao {
+    width: 20px;
+    height: 20px;
+}
+
+@media (min-width: 700px) {
+    .titulo {
+        font-size: 24px;
+    }
+
+    .tituloVaga {
+        font-size: 24px;
+    }
+}
+.minhaVaga {
+    margin: 32px 0 0;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+.fotos {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+}
+
+.foto {
+    flex-shrink: 0;
+    width: 140px;
+    height: 110px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--branco);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.minhaVaga {
+    margin: 32px 0 0;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+/* ===== Ações de quem publicou a vaga ===== */
+.botaoConcluir,
+.botaoExcluir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botaoConcluir {
+    border: none;
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.botaoExcluir {
+    border: 2px solid #d93025;
+    background: transparent;
+    color: #d93025;
+}
+
+.botaoConcluir:disabled,
+.botaoExcluir:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.tagConcluida {
+    background: #e3f6e8;
+    color: #16a34a;
+}
+
+.erroAcao {
+    margin: 0;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fdecec;
+    color: #c0392b;
+    font-size: 14px;
+}

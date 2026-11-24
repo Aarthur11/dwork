@@ -1,0 +1,219 @@
+Login responsivo · CSS
+/* ===== Base: evita estouro de largura por causa de padding/borda ===== */
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+ 
+.container {
+    min-height: 100vh;
+    min-height: 100dvh; /* corrige a barra do navegador no celular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px; /* respiro nas bordas em telas pequenas */
+    background: #f3f4f6;
+}
+ 
+.card {
+    background-color: rgb(248, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* era width: 400px fixo */
+}
+ 
+.socialIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+}
+ 
+.logo {
+    margin: 5px auto;
+    justify-content: center;
+    display: flex;
+}
+ 
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+ 
+.email {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+.senha {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+ 
+.input {
+    width: 100%;
+    height: 33px;
+    border: 1px solid rgb(209, 208, 207);
+    border-radius: 5px;
+    background-color: rgb(248, 255, 255);
+    padding: 5px;
+}
+ 
+.esqueceu {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 7px 0;
+}
+ 
+.buttonEntrar {
+    background-color: rgb(247, 124, 43);
+    padding: 13px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+ 
+.buttonEntrar:hover {
+    background-color: rgb(197, 62, 0);
+}
+ 
+.buttonGoogle {
+    width: 100%;
+    height: 33px;
+    border: 1px solid rgb(209, 208, 207);
+    border-radius: 8px;
+    background-color: rgb(248, 255, 255);
+    color: #52668f;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 5px;
+    cursor: pointer;
+}
+ 
+.semConta {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 9px 0;
+    text-align: center;
+}
+ 
+.cadastro {
+    text-decoration: none;
+    margin-left: 2px;
+}
+ 
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background: #a1bcec;
+}
+ 
+.dividerText {
+    font-size: 12px;
+    color: #a1bcec;
+}
+ 
+.titulo {
+    font-size: 25px;
+}
+ 
+.subtitulo {
+    font-size: 14px;
+    color: #52668f;
+    margin-top: 3px;
+}
+ 
+/* ===== Tablet e celular grande ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+}
+ 
+/* ===== Celular ===== */
+@media (max-width: 480px) {
+    .container {
+        align-items: flex-start; /* evita cortar o topo quando o teclado abre */
+        padding: 0;
+        background: rgb(248, 255, 255); /* card ocupa a tela toda */
+    }
+ 
+    .card {
+        max-width: none;
+        min-height: 100dvh;
+        padding: 24px 20px;
+        border-radius: 0;
+        justify-content: center;
+    }
+ 
+    .titulo {
+        font-size: 22px;
+    }
+ 
+    /* 16px impede o zoom automático do iOS ao focar no campo */
+    .input {
+        font-size: 16px;
+        height: 42px; /* alvo de toque mais confortável */
+    }
+ 
+    .buttonEntrar {
+        padding: 14px;
+    }
+ 
+    .buttonGoogle {
+        height: 42px;
+    }
+}
+ 
+/* ===== Telas muito pequenas ===== */
+@media (max-width: 360px) {
+    .card {
+        padding: 20px 16px;
+    }
+ 
+    .titulo {
+        font-size: 20px;
+    }
+}
+ 
+/* ===== Celular deitado (pouca altura) ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        align-items: flex-start;
+        padding: 12px;
+    }
+ 
+    .card {
+        min-height: auto;
+    }
+}
+
+.input:focus {
+    outline: none;                        /* remove o contorno padrão */
+}
+
+.erro{
+    margin: 4px;
+    color: rgb(216, 14, 14); 
+}

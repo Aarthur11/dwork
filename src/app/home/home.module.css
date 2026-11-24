@@ -1,0 +1,350 @@
+/* ===== Base (celular) ===== */
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* O fundo ocupa a tela toda, mas o conteúdo fica limitado a 1100px e centralizado.
+       Em telas menores que isso, vira uma margem de 16px.
+       90px embaixo: espaço para o menu fixo não cobrir o conteúdo. */
+    padding: 16px max(16px, calc((100% - 1100px) / 2)) 90px;
+    background: #f3f4f6;
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 0;
+}
+
+.logo {
+    width: auto;
+    height: 42px;
+    margin: 0;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+}
+
+.place {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* ===== Saudação ===== */
+.titulo {
+    font-size: 23px;
+}
+
+.subtitulo {
+    font-size: 15px;
+    color: #3c4d6e;
+    margin-top: 3px;
+}
+
+/* ===== Frase motivacional ===== */
+.frase {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    border-radius: 19px;
+    background-color: rgb(21, 90, 194);
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.frase p {
+    margin: 0;
+}
+
+.frase_motivacional {
+    flex-shrink: 0;
+    width: 50px;
+    height: 35px;
+    border-radius: 9px;
+    margin-right: 15px;
+}
+
+/* ===== Busca estilo Instagram ===== */
+.busca {
+    position: relative;
+    z-index: 20;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.container_topo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+.container_topo Img,
+.container_topo svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.input {
+    flex: 1;
+    min-width: 0;
+    height: 28px;
+    margin-left: 8px;
+    padding: 3px;
+    border: none;
+    border-radius: 13px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.resultados {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    max-height: 340px;
+    overflow-y: auto;
+    padding: 8px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aviso {
+    margin: 0;
+    padding: 12px;
+    color: #555555;
+    font-size: 14px;
+}
+
+.resultado {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.resultado:hover {
+    background: #f3f4f6;
+}
+
+.resultadoFoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: rgb(21, 90, 194);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.resultadoFoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resultadoInfo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.resultadoInfo small {
+    color: #555555;
+}
+
+/* ===== Categorias ===== */
+.tituloCategorias {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1f2937;
+}
+
+.item_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+/* ===== Botão criar vaga ===== */
+.criar_vaga {
+    display: inline-block;
+    margin: 16px 0 24px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: rgb(21, 90, 194);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* ===== Celular pequeno ===== */
+@media (max-width: 380px) {
+    .frase {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .frase_motivacional {
+        width: 42px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .item_card {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 340px) {
+    .item_card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== Tablet (a partir de 700px) ===== */
+@media (min-width: 700px) {
+    .container {
+        padding-top: 24px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .frase {
+        padding: 22px;
+        font-size: 20px;
+    }
+
+    .frase_motivacional {
+        width: 60px;
+        height: 42px;
+    }
+
+    .busca {
+        max-width: 640px;
+    }
+
+    .container_topo {
+        height: 52px;
+    }
+
+    .input {
+        font-size: 15px;
+    }
+
+    .tituloCategorias {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .item_card {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+}
+
+/* ===== Computador (a partir de 1024px) ===== */
+@media (min-width: 1024px) {
+    .header {
+        padding: 16px 0;
+    }
+
+    .logo {
+        height: 56px;
+    }
+
+    .place {
+        width: 40px;
+        height: 40px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .subtitulo {
+        font-size: 19px;
+    }
+
+    .frase {
+        padding: 28px 32px;
+        font-size: 24px;
+    }
+
+    .frase_motivacional {
+        width: 72px;
+        height: 50px;
+        margin-right: 22px;
+    }
+
+    .container_topo {
+        height: 56px;
+        padding: 0 18px;
+    }
+
+    .tituloCategorias {
+        font-size: 22px;
+    }
+
+    .item_card {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+    }
+}
+/* ===== Seções dentro dos resultados da busca ===== */
+.resultadosTitulo {
+    margin: 8px 0 4px;
+    padding: 0 8px;
+    color: #6b7a99;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.resultadoFotoVaga {
+    border-radius: 12px;
+    background: #fb7a1b;
+}

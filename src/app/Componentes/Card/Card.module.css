@@ -1,0 +1,125 @@
+/* O cartão: só a aparência (fundo, borda, sombra) */
+.container {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #e6e9f2;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+@media (hover: hover) {
+    .container:hover {
+        box-shadow: 0 4px 10px rgba(40, 84, 197, 0.15);
+        transform: translateY(-1px);
+    }
+}
+
+/* O link: ocupa o cartão todo e alinha o ícone e o nome, centralizados */
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    min-height: 68px;
+    padding: 12px 6px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #1f2937;
+}
+
+.iconeBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: #e6f0ff;
+    border-radius: 8px;
+}
+
+.icone {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.nome {
+    max-width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+/* ===== Celular pequeno ===== */
+@media (max-width: 380px) {
+    .link {
+        gap: 6px;
+        padding: 10px 4px;
+    }
+
+    .iconeBox {
+        width: 28px;
+        height: 28px;
+    }
+
+    .nome {
+        font-size: 11px;
+    }
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 700px) {
+    .link {
+        gap: 10px;
+        min-height: 90px;
+        padding: 16px 8px;
+    }
+
+    .iconeBox {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .icone {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nome {
+        font-size: 14px;
+    }
+}
+
+/* ===== Computador ===== */
+@media (min-width: 1024px) {
+    .link {
+        gap: 12px;
+        min-height: 120px;
+        padding: 20px 10px;
+    }
+
+    .iconeBox {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+    }
+
+    .icone {
+        width: 26px;
+        height: 26px;
+    }
+
+    .nome {
+        font-size: 15px;
+    }
+}

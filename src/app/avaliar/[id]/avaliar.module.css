@@ -1,0 +1,314 @@
+.container {
+    --fundo: #f6f7fd;
+    --branco: #ffffff;
+    --azul: #0a6fd8;
+    --azul-claro: #e6f0ff;
+    --ciano: #b3e5fc;
+    --laranja: #fb7a1b;
+    --titulo: #1c2a4a;
+    --texto-suave: #6b7a99;
+    --borda: #e6e9f2;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 0 max(16px, calc((100% - 700px) / 2)) 90px;
+    background: var(--fundo);
+    color: var(--titulo);
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    cursor: pointer;
+}
+
+.iconeVoltar {
+    width: 24px;
+    height: 24px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.aviso {
+    padding: 24px 0;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+/* ===== Topo "Tudo pronto" ===== */
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--azul);
+    border-radius: 50%;
+    background: var(--branco);
+    color: var(--azul);
+}
+
+.iconeCheck {
+    width: 40px;
+    height: 40px;
+}
+
+.tudoPronto {
+    margin: 16px 0 6px;
+    font-size: 26px;
+}
+
+.subtitulo {
+    margin: 0;
+    max-width: 320px;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--texto-suave);
+}
+
+/* ===== Cartão da pessoa ===== */
+.pessoa {
+    margin-top: 20px;
+    padding: 16px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--branco);
+}
+
+.pessoaTopo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.pessoaTopo div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pessoaTopo span {
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border: 1px solid #dfe5f2;
+    border-radius: 50%;
+    background: #f1f4fb;
+    color: #5b6b8c;
+}
+
+.pessoaRodape {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--borda);
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+/* ===== Avaliação ===== */
+.avaliacao {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 20px 16px;
+    border-radius: 20px;
+    background: var(--ciano);
+}
+
+.avaliacao h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ajuda {
+    margin: -8px 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: #4a6a85;
+}
+
+.estrelas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.estrela {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--laranja);
+    cursor: pointer;
+}
+
+.iconeEstrela {
+    width: 38px;
+    height: 38px;
+}
+
+.caixa {
+    position: relative;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: var(--branco);
+}
+
+.caixa textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    color: var(--titulo);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.caixa small {
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+    font-size: 12px;
+    color: var(--texto-suave);
+}
+
+.adicionarFoto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 12px;
+    color: var(--titulo);
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.iconeCamera {
+    width: 24px;
+    height: 24px;
+    color: var(--azul);
+}
+
+.previa {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.previa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.removerFoto {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.erro {
+    margin: 0;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fdecec;
+    color: #c0392b;
+    font-size: 14px;
+}
+
+.botao {
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--laranja);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.jaAvaliou {
+    margin: 20px 0 0;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+    .titulo {
+        font-size: 24px;
+    }
+}
