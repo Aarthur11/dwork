@@ -1,5 +1,7 @@
 import mysql from "mysql2/promise";
 
+const usaSSL = process.env.DB_SSL === "true";
+
 export const db =
   globalThis.mysqlPool ??
   mysql.createPool({
@@ -10,7 +12,9 @@ export const db =
     database: process.env.DB_NAME,
     connectionLimit: 10,
     waitForConnections: true,
+    ssl: usaSSL
+      ? { minVersion: "TLSv1.2", rejectUnauthorized: true }
+      : undefined,
   });
 
-// evita criar várias conexões a cada reload no modo dev
 if (process.env.NODE_ENV !== "production") globalThis.mysqlPool = db;
